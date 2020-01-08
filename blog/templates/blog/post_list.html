@@ -4,19 +4,16 @@
     </head>
     <body>
         <div>
-            <h1><a href="">Django Girls Blog</a></h1>
+            <h1><a href="">Welcome to Hyun-Ji Blog</a></h1>
         </div>
-
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+          {% for post in posts %} <!-- 데이터 베이스의 각각의 포스트마다 for 실행 -->
+            <h2><a href="">{{ post.title }}</a></h2> <!-- 각 post의 title(제목)만 보여줌 -->
+            <p>{{ post.text|linebreaksbr }}</p> <!-- 각 post의 text를 보여주는데, | (파이프) 필터를 통해 1줄씩 띄어쓰기를 인식해줌 -->
+          {% endfor %} <!-- 한 루프가 돌면 다음 포스트에 대해 다시 post.title, post.text를 띄워줌-->
+            <h3>Hi there, If you can see this text, It's working fine!</h3>
+            <p>
+            <h4>확인했으면 여기 문구들을 지우고 업데이트 해줘. <span style="color:#11A133">-JG-</span></h4>
         </div>
     </body>
 </html>
