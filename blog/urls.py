@@ -15,3 +15,6 @@ urlpatterns = [
     url(r'^comment/(?P<pk>\d+)/remove/$', views.comment_remove, name='comment_remove'),
     path('upload/', views.upload, name='upload'), # Image upload page
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Image file을 저장할 경로 지정

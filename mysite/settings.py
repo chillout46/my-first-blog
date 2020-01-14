@@ -121,3 +121,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+MEDIA_URL = '/media/' # 동적 파일 url 경로 지정
+MEDIA_ROOT = os.path.join(BASE_DIR, 'blog/media') # 동적 파일들을 저장 할 기본 디렉토리 지정
